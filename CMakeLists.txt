@@ -3,4 +3,4 @@ project(NGG)
 
 set(CMAKE_CXX_STANDARD 23)
 
-add_executable(NGG main.cpp src/run.h src/run.cpp src/run.h src/includes.h src/Game.cpp src/Game.h)
+add_executable(NGG main.cpp src/includes.h src/Game.cpp src/Game.h)

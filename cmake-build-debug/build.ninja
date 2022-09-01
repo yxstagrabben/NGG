@@ -55,8 +55,8 @@ build CMakeFiles/NGG.dir/main.cpp.o: CXX_COMPILER__NGG_Debug /schooldev/NGG/main
   OBJECT_DIR = CMakeFiles/NGG.dir
   OBJECT_FILE_DIR = CMakeFiles/NGG.dir
 
-build CMakeFiles/NGG.dir/src/run.cpp.o: CXX_COMPILER__NGG_Debug /schooldev/NGG/src/run.cpp || cmake_object_order_depends_target_NGG
-  DEP_FILE = CMakeFiles/NGG.dir/src/run.cpp.o.d
+build CMakeFiles/NGG.dir/src/Game.cpp.o: CXX_COMPILER__NGG_Debug /schooldev/NGG/src/Game.cpp || cmake_object_order_depends_target_NGG
+  DEP_FILE = CMakeFiles/NGG.dir/src/Game.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always -std=gnu++23
   OBJECT_DIR = CMakeFiles/NGG.dir
   OBJECT_FILE_DIR = CMakeFiles/NGG.dir/src
@@ -69,7 +69,7 @@ build CMakeFiles/NGG.dir/src/run.cpp.o: CXX_COMPILER__NGG_Debug /schooldev/NGG/s
 #############################################
 # Link the executable NGG
 
-build NGG: CXX_EXECUTABLE_LINKER__NGG_Debug CMakeFiles/NGG.dir/main.cpp.o CMakeFiles/NGG.dir/src/run.cpp.o
+build NGG: CXX_EXECUTABLE_LINKER__NGG_Debug CMakeFiles/NGG.dir/main.cpp.o CMakeFiles/NGG.dir/src/Game.cpp.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/NGG.dir
   POST_BUILD = :

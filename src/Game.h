@@ -1,14 +1,10 @@
 //
 // Created by anton on 9/1/22.
 //
-
-#ifndef NGG_GAME_H
-#define NGG_GAME_H
-
+#pragma once
 
 class Game {
+public:
     void Run();
 };
 
-
-#endif //NGG_GAME_H
