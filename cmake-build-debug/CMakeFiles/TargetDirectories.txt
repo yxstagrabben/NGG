@@ -1,0 +1,3 @@
+/schooldev/NGG/cmake-build-debug/CMakeFiles/NGG.dir
+/schooldev/NGG/cmake-build-debug/CMakeFiles/edit_cache.dir
+/schooldev/NGG/cmake-build-debug/CMakeFiles/rebuild_cache.dir
