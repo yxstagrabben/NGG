@@ -3,3 +3,8 @@
 //
 
 #include "Game.h"
+
+void Run()
+{
+
+}
