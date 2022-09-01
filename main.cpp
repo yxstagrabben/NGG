@@ -2,6 +2,6 @@
 
 int main() {
     Game game;
-    game.Run();
+    game.Run(true);
     std::cin.get();
 }

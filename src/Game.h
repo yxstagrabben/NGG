@@ -5,11 +5,12 @@
 
 class Game {
 public:
-    void Run();
+    bool game();
+    void Run(bool playing);
     void InitGame();
     int Rand();
     int input();
-    int calc(int input, int correctNumber);
+    void calc(int input, int correctNumber);
     bool GameOver(int wrong);
     void Print(int dialog);
 };
