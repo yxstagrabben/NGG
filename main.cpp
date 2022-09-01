@@ -3,4 +3,5 @@
 int main() {
     Game game;
     game.Run();
+    std::cin.get();
 }

@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/NGG.dir/main.cpp.o CMakeFiles/NGG.dir/src/Game.cpp.o -o NGG 
