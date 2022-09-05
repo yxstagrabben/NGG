@@ -4,48 +4,54 @@
 
 #include "includes.h"
 
-int lives = 0;
 void Game::Run(bool playing)
 {
-    while(playing == true)
+    while(playing)
     {
-        GameOver(0);
-        int answer = Rand();
+        initGame();
         std::cout << answer << "\n";
-        while (GameOver(2) == false)
+        while(roundIsPlaying)
         {
-            calc(input(), answer);
-        }
-        if(GameOver(2) == true)
-        {
-            Print(4);
-            if(input() == 1)
+            while (GameOver(2) == false)
             {
-                Run(true);
+                Input = input();
+                calc(Input, answer);
             }
-            else
+            if(GameOver(2) == true)
             {
-
+                Print(4);
+                if(input() == 1)
+                {
+                    Run(true);
+                }
+                else if (input() == 0)
+                {
+                    std::cout << "Thanks for playing!";
+                    Run(false);
+                }
             }
         }
     }
 
 }
 
-void Game::InitGame()
+void Game::initGame()
 {
     GameOver(0);
+    answer = Rand();
 }
 
 int Game::Rand()
 {
     std::srand(time(0));
-    return rand() % 100;
+    randomNumber = rand() % 100;
+    return randomNumber;
 }
 
 int Game::input()
 {
-    return std::cin.get();
+    std::cin >> temp;
+    return temp;
 }
 void Game::calc(int input, int correctNumber)
 {
@@ -53,13 +59,14 @@ void Game::calc(int input, int correctNumber)
     {
         Print(1);
         GameOver(0);
+        roundIsPlaying == false;
     }
-    else if(input >> correctNumber)
+    else if(input > correctNumber)
     {
         Print(2);
         GameOver(1);
     }
-    else if(input << correctNumber)
+    else if(input < correctNumber)
     {
         Print(3);
         GameOver(1);
@@ -74,7 +81,7 @@ bool Game::GameOver(int wrong)
     }
     else if(wrong == 1)
     {
-        lives =- 1;
+        lives -= 1;
     }
     else if(wrong == 2)
     {}
@@ -99,7 +106,7 @@ void Game::Print(int dialog)
     }
     else if(dialog == 1)
     {
-        std::cout << ("Your right your score is now: ") << score(0) << ("k");
+        std::cout << ("Your right your score is now: ") << score(0) << ("\n");
     }
     else if(dialog == 2)
     {
@@ -116,10 +123,9 @@ void Game::Print(int dialog)
 }
 int Game::score(bool reset)
 {
-    int Score;
     if(reset == false)
     {
-        Score =+ 1;
+        Score += 1;
     }
     else
     {
