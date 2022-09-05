@@ -4,21 +4,14 @@
 
 #include "includes.h"
 
-namespace Lib
-{
-    template <typename T>
-    void print(T t)
-    {
-        std::cout << t << "\n";
-    }
-}
-
-
+int lives = 0;
 void Game::Run(bool playing)
 {
     while(playing == true)
     {
+        GameOver(0);
         int answer = Rand();
+        std::cout << answer << "\n";
         while (GameOver(2) == false)
         {
             calc(input(), answer);
@@ -46,6 +39,7 @@ void Game::InitGame()
 
 int Game::Rand()
 {
+    std::srand(time(0));
     return rand() % 100;
 }
 
@@ -74,7 +68,6 @@ void Game::calc(int input, int correctNumber)
 
 bool Game::GameOver(int wrong)
 {
-    int lives;
     if(wrong == 0)
     {
         lives = 5;
@@ -87,7 +80,8 @@ bool Game::GameOver(int wrong)
     {}
     else
     {}
-    if(lives == 0 )
+    std::cout << "Lives at: " << lives << "\n";
+    if(lives <= 0 )
     {
         return true;
     }
@@ -101,22 +95,35 @@ void Game::Print(int dialog)
 {
     if(dialog == 0)
     {
-        Lib::print("Hello ");
+        std::cout << ("Hello this is a guessing game try to print a number then press enter: ");
     }
     else if(dialog == 1)
     {
-        Lib::print("Hello ");
+        std::cout << ("Your right your score is now: ") << score(0) << ("k");
     }
     else if(dialog == 2)
     {
-        Lib::print("Hello ");
+        std::cout << ("Your guess is too high! Please try again:  ");
     }
     else if(dialog == 3)
     {
-        Lib::print("Hello ");
+        std::cout << ("Your guess is too low! Please try again:  ");
     }
     else if(dialog == 4)
     {
-        Lib::print("Hello ");
+        std::cout << ("Do you want to play again press 1 if not press 0 and then the enter button: ");
     }
+}
+int Game::score(bool reset)
+{
+    int Score;
+    if(reset == false)
+    {
+        Score =+ 1;
+    }
+    else
+    {
+        Score = 0;
+    }
+    return Score;
 }

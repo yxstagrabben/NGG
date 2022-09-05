@@ -5,7 +5,6 @@
 
 class Game {
 public:
-    bool game();
     void Run(bool playing);
     void InitGame();
     int Rand();
@@ -13,5 +12,6 @@ public:
     void calc(int input, int correctNumber);
     bool GameOver(int wrong);
     void Print(int dialog);
+    int score(bool reset);
 };
 
