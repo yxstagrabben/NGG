@@ -27,6 +27,7 @@ void Game::Run(bool playing)
                 else if (input() == 0)
                 {
                     std::cout << "Thanks for playing!";
+                    roundIsPlaying = false;
                     Run(false);
                 }
             }
