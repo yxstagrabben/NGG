@@ -11,12 +11,12 @@ void Game::Run(bool playing)
         initGame();
         while(roundIsPlaying)
         {
-            while (GameOver(2) == false)
+            while (GameOver(2) == false) //Seeing if player has lost all lives otherwise check for input and see if its right
             {
                 Input = input();
                 calc(Input, answer);
             }
-            if(GameOver(2) == true)
+            if(GameOver(2) == true) //If gameover is true see if player wanna play again if not it quits otherwise it starts over
             {
                 Print(4);
 
@@ -36,26 +36,26 @@ void Game::Run(bool playing)
 
 }
 
-void Game::initGame()
+void Game::initGame()   //starting game with resetting lives and randomising new number
 {
     GameOver(0);
     answer = Rand();
     Print(0);
 }
 
-int Game::Rand()
+int Game::Rand() //Randomising new number
 {
     std::srand(time(0));
     randomNumber = rand() % 100;
     return randomNumber;
 }
 
-int Game::input()
+int Game::input() //Taking input
 {
     std::cin >> temp;
     return temp;
 }
-void Game::calc(int input, int correctNumber)
+void Game::calc(int input, int correctNumber)   //Seeing if input is correct, to low or too high
 {
     if(input == correctNumber)
     {
@@ -76,7 +76,7 @@ void Game::calc(int input, int correctNumber)
     }
 }
 
-bool Game::GameOver(int wrong)
+bool Game::GameOver(int wrong) //Keeping tabs of the lives and if lives reach zero it sends player to see if it wants to play again
 {
     if(wrong == 0)
     {
@@ -88,6 +88,7 @@ bool Game::GameOver(int wrong)
     }
     if(lives <= 0 )
     {
+        score(1);
         return true;
     }
     else
@@ -96,7 +97,7 @@ bool Game::GameOver(int wrong)
     }
 }
 
-void Game::Print(int dialog)
+void Game::Print(int dialog)    //A function to keep all couts in
 {
     if(dialog == 0)
     {
@@ -119,7 +120,7 @@ void Game::Print(int dialog)
         std::cout << "\nDo you want to play again press 1 if not press 0 and then the enter button: ";
     }
 }
-int Game::score(bool reset)
+int Game::score(bool reset) //increase or reset score
 {
     if(reset == false)
     {

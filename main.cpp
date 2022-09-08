@@ -2,6 +2,6 @@
 
 int main() {
     Game game;
-    game.Run(true);
+    game.Run(true); //Calling game function in Game.cpp file
     std::cin.get();
 }
